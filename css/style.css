@@ -1,0 +1,59 @@
+/* ===== Sticky Navigation ===== */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg, #fff);
+    border-bottom: 2px solid var(--border, #e0e0e0);
+    padding: 0.5rem 0;
+}
+
+.site-nav .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.nav-tagline {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 0.15rem;
+    letter-spacing: 0.02em;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
