@@ -96,22 +96,16 @@
                 lensContent.style.margin = '0';
                 lensContent.style.padding = '0';
 
-                // Remove lens clone and skip link to avoid recursion
+                // Remove lens clone and skip link
                 var clonedLens = lensContent.querySelector('#magnifier-lens');
                 if (clonedLens) clonedLens.remove();
                 var clonedSkip = lensContent.querySelector('.skip-link');
                 if (clonedSkip) clonedSkip.remove();
 
-                // Fix sticky/fixed elements: capture their actual rendered position
-                // and convert to absolute so they appear correctly in the clone
-                var stickyEls = document.querySelectorAll('.sidebar, .site-nav');
+                // Neutralize sticky/fixed positioning to keep elements in flow
                 var clonedSticky = lensContent.querySelectorAll('.sidebar, .site-nav');
-                for (var s = 0; s < stickyEls.length; s++) {
-                    var rect = stickyEls[s].getBoundingClientRect();
-                    clonedSticky[s].style.position = 'absolute';
-                    clonedSticky[s].style.top = (rect.top + window.scrollY) + 'px';
-                    clonedSticky[s].style.left = rect.left + 'px';
-                    clonedSticky[s].style.width = rect.width + 'px';
+                for (var s = 0; s < clonedSticky.length; s++) {
+                    clonedSticky[s].style.position = 'relative';
                 }
 
                 lens.appendChild(lensContent);
