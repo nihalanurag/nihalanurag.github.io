@@ -158,13 +158,14 @@ html {
 
 .org-logos {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 0.75rem;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
 }
 
 .org-logo {
-    height: 40px;
+    height: 36px;
     width: auto;
     opacity: 0.85;
     transition: opacity 0.2s;
@@ -174,8 +175,15 @@ html {
     opacity: 1;
 }
 
-[data-theme="dark"] .org-logo {
-    filter: brightness(1.2);
+/* SAIL logo is white — needs invert in light mode */
+[data-theme="light"] .org-logo[alt="SAIL Lab"],
+:not([data-theme]) .org-logo[alt="SAIL Lab"] {
+    filter: invert(1);
+}
+
+/* GeoAI logo is dark — needs invert in dark mode */
+[data-theme="dark"] .org-logo[alt="GeoAI4Cities Lab"] {
+    filter: invert(1);
 }
 
 .hero-emails {
