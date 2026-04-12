@@ -126,7 +126,7 @@ html {
 }
 
 .section {
-    padding: 3rem 0 2rem;
+    padding: 1.5rem 0 0;
 }
 
 /* ===== Page Layout — Sticky Sidebar ===== */
@@ -355,9 +355,8 @@ html {
 /* ===== Section Heading ===== */
 .section-heading {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent, #0066cc);
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 /* ===== Publications ===== */
