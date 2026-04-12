@@ -58,6 +58,76 @@
     border-radius: 4px;
 }
 
+/* ===== Global ===== */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 3rem 0 2rem;
+}
+
+/* ===== Hero ===== */
+.hero {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.hero-photo .photo-placeholder {
+    width: 160px;
+    height: 160px;
+    font-size: 3rem;
+}
+
+.hero-info h1 {
+    margin: 0 0 0.25rem;
+}
+
+.hero-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.15rem;
+}
+
+.hero-dept, .hero-advisor {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    margin: 0 0 0.15rem;
+}
+
+.hero-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.75rem 0;
+}
+
+.hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.hero-links a {
+    font-size: 0.9rem;
+}
+
+/* ===== Responsive: Hero stacks on mobile ===== */
+@media (max-width: 640px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-interests, .hero-links {
+        justify-content: center;
+    }
+}
+
 /* ===== Dark Mode Overrides ===== */
 [data-theme="dark"] .site-nav {
     border-bottom-color: #333;
