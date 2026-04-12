@@ -116,6 +116,72 @@
     font-size: 0.9rem;
 }
 
+/* ===== Sub-sections with geometric accents ===== */
+.subsection {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border, #e0e0e0);
+}
+
+.subsection-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent, #0066cc);
+}
+
+/* Timeline items */
+.timeline-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    align-items: flex-start;
+}
+
+.timeline-item p {
+    margin: 0.15rem 0;
+    font-size: 0.92rem;
+    opacity: 0.85;
+}
+
+.year-badge {
+    font-family: monospace;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    margin-top: 0.2rem;
+}
+
+/* Awards */
+.awards-list {
+    list-style: none;
+    padding: 0;
+}
+
+.awards-list li {
+    margin-bottom: 0.6rem;
+    font-size: 0.92rem;
+}
+
+/* Skills */
+.skills-group {
+    margin-bottom: 1rem;
+}
+
+.skills-group h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.65;
+    margin-bottom: 0.4rem;
+}
+
+.skills-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
 /* ===== Responsive: Hero stacks on mobile ===== */
 @media (max-width: 640px) {
     .hero {
@@ -125,6 +191,10 @@
     }
     .hero-interests, .hero-links {
         justify-content: center;
+    }
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.25rem;
     }
 }
 
