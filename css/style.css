@@ -193,13 +193,8 @@ html {
     opacity: 1;
 }
 
-/* SAIL logo is white — invert in light mode only */
-[data-theme="light"] .org-logo[alt="SAIL Lab"],
-:not([data-theme]) .org-logo[alt="SAIL Lab"] {
-    filter: invert(1);
-}
-
-/* GeoAI logo is dark — invert in dark mode */
+/* SAIL and GeoAI logos are dark — invert in dark mode */
+[data-theme="dark"] .org-logo[alt="SAIL Lab"],
 [data-theme="dark"] .org-logo[alt="GeoAI4Cities Lab"] {
     filter: invert(1);
 }
