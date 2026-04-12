@@ -360,6 +360,73 @@ html {
     gap: 0.35rem;
 }
 
+/* ===== Research Graph ===== */
+.research-graph-container {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    border: 1px solid var(--border, #e0e0e0);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.graph-link {
+    stroke: #999;
+}
+
+.graph-label {
+    font-family: 'Ubuntu Mono', monospace;
+    fill: #222;
+    pointer-events: none;
+}
+
+.graph-node {
+    cursor: pointer;
+}
+
+.graph-tooltip {
+    position: absolute;
+    padding: 0.5rem 0.75rem;
+    background: var(--bg-color, #fff);
+    border: 1px solid var(--border, #e0e0e0);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    pointer-events: none;
+    z-index: 10;
+    max-width: 250px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+[data-theme="dark"] .graph-tooltip {
+    background: #222;
+    border-color: #444;
+}
+
+.graph-legend {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.82rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-mine { background: #cc4400; }
+.legend-project { background: #0066cc; }
+.legend-related { background: #888; }
+
 /* ===== Section Heading ===== */
 .section-heading {
     font-size: 1.5rem;
