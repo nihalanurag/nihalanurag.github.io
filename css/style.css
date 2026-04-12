@@ -316,6 +316,10 @@ html {
     margin: 0.15rem 0 0;
 }
 
+.project-repo {
+    margin: 0.3rem 0 0;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
