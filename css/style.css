@@ -123,30 +123,46 @@ html {
     padding: 3rem 0 2rem;
 }
 
-/* ===== Hero ===== */
-.hero {
+/* ===== Page Layout — Sticky Sidebar ===== */
+.page-layout {
     display: flex;
     gap: 2.5rem;
     align-items: flex-start;
-    padding-bottom: 1.5rem;
 }
 
-.hero-photo .photo-placeholder {
+.sidebar {
+    position: sticky;
+    top: 5rem;
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 2rem;
+}
+
+.sidebar .photo-placeholder {
     width: 160px;
     height: 160px;
     font-size: 3rem;
 }
 
-.hero-photo .hero-links {
+.sidebar-links {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: 0.4rem;
-    margin-top: 0.75rem;
-    justify-content: center;
+    margin-top: 0.25rem;
 }
 
-.hero-info h1 {
-    margin: 0 0 0.5rem;
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+.content h1 {
+    margin: 2rem 0 0.5rem;
 }
 
 .hero-bio {
@@ -161,12 +177,13 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .org-logo {
-    height: 36px;
+    height: 50px;
     width: auto;
+    max-width: 180px;
     opacity: 0.85;
     transition: opacity 0.2s;
 }
@@ -184,6 +201,14 @@ html {
 /* GeoAI logo is dark — needs invert in dark mode */
 [data-theme="dark"] .org-logo[alt="GeoAI4Cities Lab"] {
     filter: invert(1);
+}
+
+/* Education logos */
+.edu-logo {
+    height: 20px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0.35rem;
 }
 
 .hero-emails {
@@ -360,13 +385,32 @@ html {
 }
 
 /* ===== Responsive: Hero stacks on mobile ===== */
-@media (max-width: 640px) {
-    .hero {
+@media (max-width: 768px) {
+    .page-layout {
         flex-direction: column;
         align-items: center;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+    .sidebar-links {
+        flex-direction: row;
+    }
+    .org-logos {
+        flex-direction: row;
+    }
+    .content {
+        text-align: left;
+    }
+    .content h1 {
         text-align: center;
     }
-    .hero-interests, .hero-photo .hero-links {
+    .hero-interests {
         justify-content: center;
     }
     .hero-emails {
