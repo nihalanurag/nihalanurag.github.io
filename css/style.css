@@ -2,6 +2,11 @@
 html {
     font-family: 'Ubuntu Mono', monospace;
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+}
+
+::selection {
+    background: rgba(0, 102, 204, 0.25);
 }
 
 /* ===== Skip Link (accessibility) ===== */
@@ -380,6 +385,11 @@ html {
 /* ===== Project Cards ===== */
 .project-card {
     margin-bottom: 1.25rem;
+    transition: transform 0.15s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
 }
 
 .project-meta {
