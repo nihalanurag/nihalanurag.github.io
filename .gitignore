@@ -16,3 +16,4 @@ node_modules/
 # Misc
 *.log
 .env
+GITHUB_PROFILE_README.md
