@@ -1,7 +1,12 @@
 (function () {
-    document.addEventListener('DOMContentLoaded', function () {
+    function initGraph() {
         var container = document.getElementById('research-graph');
-        if (!container || typeof d3 === 'undefined') return;
+        if (!container) return;
+        if (typeof d3 === 'undefined') {
+            // D3 not loaded yet — retry in 200ms
+            setTimeout(initGraph, 200);
+            return;
+        }
 
         var width = container.clientWidth;
         var height = 600;
@@ -317,5 +322,12 @@
             simulation.force('center', d3.forceCenter(width / 2, height / 2));
             simulation.alpha(0.3).restart();
         });
-    });
+    }
+
+    // Start when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGraph);
+    } else {
+        initGraph();
+    }
 })();
