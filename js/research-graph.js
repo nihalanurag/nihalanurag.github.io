@@ -17,6 +17,7 @@
             { id: 'ease', label: 'EASe', year: 2026, type: 'mine', venue: 'arXiv 2026', url: 'https://arxiv.org/abs/2604.00276', desc: 'Domain-Agnostic Fine-Grained Mask Discovery' },
             { id: 'umdmix', label: 'UMDMix', year: 2025, type: 'mine', venue: 'Neurocomputing 2025', url: 'https://doi.org/10.1016/j.neucom.2025.131526', desc: 'Multi-Domain Mixing for LiDAR UDA' },
             { id: 'dense-urban', label: 'Dense Urban\nFeatures', year: 2024, type: 'mine', venue: 'ICPR 2024', url: 'https://doi.org/10.1007/978-3-031-88217-3_28', desc: 'Conditional GAN for Satellite Imagery' },
+            { id: 'audio-dataset', label: 'Urban Audio\nDataset', year: 2023, type: 'mine', venue: 'Mendeley Data 2023', url: 'https://doi.org/10.17632/4553jk9dvz.1', desc: 'Multi-label Auditory Dataset from Indian Urban Environments' },
 
             // === My Research Projects ===
             { id: 'dst-project', label: 'Emergency\nVehicle Access', year: 2024, type: 'project', desc: 'LiDAR + Image segmentation for urban accessibility' },
@@ -113,10 +114,16 @@
             { source: 'soundscape', target: 'deeplab', strength: 0.4 },
             { source: 'soundscape', target: 'unet', strength: 0.4 },
 
+            // === Audio Dataset connections ===
+            { source: 'audio-dataset', target: 'soundscape', strength: 0.95 },
+            { source: 'audio-dataset', target: 'deeplab', strength: 0.3 },
+
             // === Cross-connections (my work) ===
             { source: 'ease', target: 'umdmix', strength: 0.25 },
             { source: 'umdmix', target: 'dense-urban', strength: 0.25 },
             { source: 'musmix', target: 'dst-project', strength: 0.6 },
+            { source: 'soundscape', target: 'audio-dataset', strength: 0.95 },
+            { source: 'dense-urban', target: 'audio-dataset', strength: 0.3 },
 
             // === LiDAR cluster internal ===
             { source: 'cosmix', target: 'minkeng', strength: 0.5 },
