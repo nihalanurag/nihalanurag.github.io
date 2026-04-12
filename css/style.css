@@ -1,6 +1,7 @@
-/* ===== Base Font ===== */
+/* ===== Base Font & Scroll ===== */
 html {
     font-family: 'Ubuntu Mono', monospace;
+    scroll-behavior: smooth;
 }
 
 /* ===== Skip Link (accessibility) ===== */
@@ -445,8 +446,28 @@ html {
     }
 }
 
+/* ===== Footer ===== */
+.site-footer {
+    border-top: 2px solid var(--border, #e0e0e0);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 2rem;
+}
+
+.footer-sub {
+    font-size: 0.78rem;
+    margin-top: 0.25rem;
+    opacity: 0.6;
+}
+
 /* ===== Dark Mode Overrides ===== */
 [data-theme="dark"] .site-nav {
     background: #1a1a1a;
     border-bottom-color: #333;
+}
+
+[data-theme="dark"] .site-footer {
+    border-top-color: #333;
 }
