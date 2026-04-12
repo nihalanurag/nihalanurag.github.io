@@ -33,5 +33,16 @@
                 setTheme(getTheme() === 'dark' ? 'light' : 'dark');
             });
         }
+
+        // Email unscramble
+        var unscrambleBtn = document.getElementById('unscramble-btn');
+        var emailSpan = document.getElementById('scrambled-email');
+        if (unscrambleBtn && emailSpan) {
+            unscrambleBtn.addEventListener('click', function () {
+                var real = emailSpan.getAttribute('data-email');
+                emailSpan.innerHTML = '<a href="mailto:' + real + '">' + real + '</a>';
+                unscrambleBtn.style.display = 'none';
+            });
+        }
     });
 })();
