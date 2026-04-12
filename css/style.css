@@ -83,10 +83,34 @@
     font-size: 3rem;
 }
 
+.hero-photo .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    justify-content: center;
+}
+
+.hero-info h1 {
+    margin: 0 0 0.5rem;
+}
+
+.hero-bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+    opacity: 0.9;
+}
+
+.hero-emails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
 .email-scramble {
-    margin-top: 0.6rem;
-    font-size: 0.82rem;
-    text-align: center;
+    font-size: 0.85rem;
 }
 
 .email-label {
@@ -99,40 +123,16 @@
 }
 
 .unscramble-link {
-    display: inline-block;
-    margin-top: 0.2rem;
     font-size: 0.75rem;
     cursor: pointer;
-}
-
-.hero-info h1 {
-    margin: 0 0 0.25rem;
-}
-
-.hero-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 0 0 0.15rem;
-}
-
-.hero-dept, .hero-advisor {
-    font-size: 0.95rem;
-    opacity: 0.75;
-    margin: 0 0 0.15rem;
+    margin-left: 0.25rem;
 }
 
 .hero-interests {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-    margin: 0.75rem 0;
-}
-
-.hero-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
 .link-badge {
@@ -275,7 +275,10 @@
         align-items: center;
         text-align: center;
     }
-    .hero-interests, .hero-links {
+    .hero-interests, .hero-photo .hero-links {
+        justify-content: center;
+    }
+    .hero-emails {
         justify-content: center;
     }
     .timeline-item, .pub-item {
