@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anurag Nihal — PhD Student</title>
     <meta name="description" content="Anurag Nihal — PhD Student at University of Houston. Deep Learning, Computer Vision, Remote Sensing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/@knadh/oat/oat.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/@knadh/oat/oat.min.js" defer></script>
     <script src="js/theme.js" defer></script>
 </head>
 <body>
-    <nav class="site-nav">
+    <a href="#about" class="skip-link">Skip to content</a>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-top">
                 <a href="#" class="nav-name">Anurag Nihal</a>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#research">Research</a>
+                    <button class="magnifier-toggle outline" aria-label="Toggle magnifier" title="Toggle magnifier">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </button>
                     <button class="theme-toggle outline" aria-label="Toggle dark/light mode" title="Toggle theme">
                         <span class="theme-icon">&#9789;</span>
                     </button>
@@ -27,7 +34,9 @@
         </div>
     </nav>
 
-    <main class="container">
+    <div class="magnifier-lens" id="magnifier-lens" aria-hidden="true"></div>
+
+    <main class="container" role="main">
         <!-- ===== ABOUT SECTION ===== -->
         <section id="about" class="section">
             <div class="hero">

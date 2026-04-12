@@ -1,3 +1,57 @@
+/* ===== Base Font ===== */
+html {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+/* ===== Skip Link (accessibility) ===== */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 0.5rem 1rem;
+    background: var(--accent, #0066cc);
+    color: #fff;
+    z-index: 200;
+    font-size: 0.9rem;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===== Magnifier Lens ===== */
+.magnifier-lens {
+    display: none;
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid var(--accent, #0066cc);
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    background: var(--bg-color, #fff);
+}
+
+.magnifier-lens.active {
+    display: block;
+}
+
+.magnifier-toggle {
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.magnifier-toggle.active {
+    background: var(--accent, #0066cc);
+    color: #fff;
+}
+
 /* ===== Sticky Navigation ===== */
 .site-nav {
     position: sticky;

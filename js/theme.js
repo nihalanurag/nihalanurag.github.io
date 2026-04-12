@@ -72,6 +72,76 @@
             step();
         }
 
+        // Magnifier lens — clone-and-scale approach
+        var magBtn = document.querySelector('.magnifier-toggle');
+        var lens = document.getElementById('magnifier-lens');
+        var magActive = false;
+        var LENS_SIZE = 180;
+        var ZOOM = 2;
+        var lensContent = null;
+
+        if (magBtn && lens) {
+            function buildLensContent() {
+                // Remove old clone if exists
+                if (lensContent) lens.removeChild(lensContent);
+
+                // Clone the entire page body
+                lensContent = document.body.cloneNode(true);
+                lensContent.style.position = 'absolute';
+                lensContent.style.top = '0';
+                lensContent.style.left = '0';
+                lensContent.style.width = document.documentElement.scrollWidth + 'px';
+                lensContent.style.minHeight = document.documentElement.scrollHeight + 'px';
+                lensContent.style.transform = 'scale(' + ZOOM + ')';
+                lensContent.style.transformOrigin = '0 0';
+                lensContent.style.pointerEvents = 'none';
+                lensContent.style.margin = '0';
+                lensContent.style.padding = '0';
+
+                // Remove the lens clone from within the cloned body to avoid recursion
+                var clonedLens = lensContent.querySelector('#magnifier-lens');
+                if (clonedLens) clonedLens.remove();
+                var clonedSkip = lensContent.querySelector('.skip-link');
+                if (clonedSkip) clonedSkip.remove();
+
+                lens.appendChild(lensContent);
+            }
+
+            magBtn.addEventListener('click', function () {
+                magActive = !magActive;
+                magBtn.classList.toggle('active', magActive);
+                lens.classList.toggle('active', magActive);
+                if (magActive) {
+                    buildLensContent();
+                }
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!magActive || !lensContent) return;
+
+                var x = e.clientX;
+                var y = e.clientY;
+
+                // Position lens centered on cursor
+                lens.style.left = (x - LENS_SIZE / 2) + 'px';
+                lens.style.top = (y - LENS_SIZE / 2) + 'px';
+
+                // Offset the cloned content so the area under cursor is centered in lens
+                var pageX = x + window.scrollX;
+                var pageY = y + window.scrollY;
+                lensContent.style.left = -(pageX * ZOOM - LENS_SIZE / 2) + 'px';
+                lensContent.style.top = -(pageY * ZOOM - LENS_SIZE / 2) + 'px';
+            });
+
+            // Rebuild clone periodically to catch content changes (theme toggle, etc.)
+            var rebuildTimer;
+            document.addEventListener('scroll', function () {
+                if (!magActive) return;
+                clearTimeout(rebuildTimer);
+                rebuildTimer = setTimeout(buildLensContent, 200);
+            });
+        }
+
         // Init all scrambled emails
         var scrambleItems = document.querySelectorAll('.scramble-item');
         var scrambleBtns = document.querySelectorAll('.scramble-btn');
