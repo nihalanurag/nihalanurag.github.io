@@ -229,8 +229,8 @@
             if (d.venue) text += '<br>' + d.venue;
             text += '<br><em>' + d.desc + '</em>';
             tooltip.html(text)
-                .style('left', (event.offsetX + 15) + 'px')
-                .style('top', (event.offsetY - 10) + 'px')
+                .style('left', (event.clientX + 15) + 'px')
+                .style('top', (event.clientY - 10) + 'px')
                 .transition().duration(150).style('opacity', 1);
 
             // Highlight connected edges and dim others

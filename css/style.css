@@ -385,7 +385,7 @@ html {
 }
 
 .graph-tooltip {
-    position: absolute;
+    position: fixed;
     padding: 0.5rem 0.75rem;
     background: var(--bg-color, #fff);
     border: 1px solid var(--border, #e0e0e0);
@@ -393,7 +393,7 @@ html {
     font-size: 0.8rem;
     line-height: 1.4;
     pointer-events: none;
-    z-index: 10;
+    z-index: 9999;
     max-width: 250px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
@@ -419,13 +419,15 @@ html {
 .legend-dot {
     width: 12px;
     height: 12px;
+    min-width: 12px;
+    min-height: 12px;
     border-radius: 50%;
     display: inline-block;
 }
 
-.legend-mine { background: #cc4400; }
-.legend-project { background: #0066cc; }
-.legend-related { background: #888; }
+.legend-mine { background-color: #cc4400 !important; }
+.legend-project { background-color: #0066cc !important; }
+.legend-related { background-color: #888 !important; }
 
 /* ===== Section Heading ===== */
 .section-heading {
