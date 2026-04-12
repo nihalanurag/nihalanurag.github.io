@@ -193,14 +193,19 @@ html {
     opacity: 1;
 }
 
-/* SAIL logo is white — needs invert in light mode */
+/* SAIL logo is white — invert in light mode only */
 [data-theme="light"] .org-logo[alt="SAIL Lab"],
 :not([data-theme]) .org-logo[alt="SAIL Lab"] {
     filter: invert(1);
 }
 
-/* GeoAI logo is dark — needs invert in dark mode */
+/* GeoAI logo is dark — invert in dark mode */
 [data-theme="dark"] .org-logo[alt="GeoAI4Cities Lab"] {
+    filter: invert(1);
+}
+
+/* IISER logo is dark — invert in dark mode */
+[data-theme="dark"] .edu-logo[alt="IISER Bhopal"] {
     filter: invert(1);
 }
 
@@ -222,8 +227,9 @@ html {
     opacity: 0.85;
 }
 
-[data-theme="dark"] .edu-logo {
-    filter: brightness(1.3);
+/* UH logo has dark red — boost brightness in dark mode */
+[data-theme="dark"] .edu-logo[alt="UH"] {
+    filter: brightness(1.5);
 }
 
 .hero-emails {
