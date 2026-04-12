@@ -156,6 +156,28 @@ html {
     opacity: 0.9;
 }
 
+.org-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.org-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.org-logo:hover {
+    opacity: 1;
+}
+
+[data-theme="dark"] .org-logo {
+    filter: brightness(1.2);
+}
+
 .hero-emails {
     display: flex;
     flex-wrap: wrap;
