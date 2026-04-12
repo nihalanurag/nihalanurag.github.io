@@ -3,7 +3,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--bg, #fff);
+    background: var(--bg-color, #fff);
     border-bottom: 2px solid var(--border, #e0e0e0);
     padding: 0.5rem 0;
 }
@@ -254,5 +254,6 @@
 
 /* ===== Dark Mode Overrides ===== */
 [data-theme="dark"] .site-nav {
+    background: #1a1a1a;
     border-bottom-color: #333;
 }
